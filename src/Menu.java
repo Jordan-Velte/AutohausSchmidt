@@ -9,7 +9,6 @@ public class Menu {
     Scanner _marke;
     Scanner _preis;
     Scanner _modell;
-    
     Scanner _baujahr;
     
     //CONSTRUCTOR: Man brauch nur einen Scanner (siehe Arbeitsblatt vom 10.9.2021)

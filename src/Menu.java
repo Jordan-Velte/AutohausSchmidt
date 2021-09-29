@@ -11,6 +11,7 @@ public class Menu {
     Scanner _modell;
     Scanner _baujahr;
     
+    
     //CONSTRUCTOR: Man brauch nur einen Scanner (siehe Arbeitsblatt vom 10.9.2021)
     public Menu(){
         this.setScanner(new Scanner(System.in));

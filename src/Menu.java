@@ -35,7 +35,8 @@ public class Menu {
         System.out.println("(4) Neuer Verkäufer");
         System.out.println("(5) Zeige alle Autos");
         System.out.println("(6) Zeige alle Kunden");
-        System.out.println("(7) Zeige alle Verkaeufer");
+        System.out.println("(7) Zeige alle Verkäufer");
+        System.out.println("(8) Zeige alle Verkäufe");
         //Methodenvariable = choice. Eingabe wird zwischengespeichert in Variable Choice
         String choice = getScanner().nextLine();
         System.out.println("Deine Auswahl ist: " + choice);
@@ -63,8 +64,11 @@ public class Menu {
         else if(choice.equals("7")){
             showVerkaeufer();
         }
+        else if(choice.equals("8")){
+            showVerkaeufe();
+        }
         else{
-            System.out.println("Bitte nur 1,2,3,4,5,6,7 eingeben!");
+            System.out.println("Bitte nur 1,2,3,4,5,6,7,8 eingeben!");
         }
         startMenu();
     }
@@ -135,6 +139,15 @@ public class Menu {
             }
         }
     }
+
+    public void showVerkaeufe(){
+        for (Verkauf verkauf : App.getALLVerkauf()){
+            if (verkauf != null){
+                System.out.println(verkauf.getAuto() + " " + verkauf.getKunde() + " " + verkauf.getVerkaeufer() + " " + verkauf.getPreis());
+            }
+        }
+    }
+    
     //createAutos-Methode, Work in Progress --> deshalb Kommentar tbd
     public void createAutoMenu(){
         //System.out.print --> Cursor ist genau am Ende des Strings für die Eingabe im Terminal
@@ -195,7 +208,9 @@ public class Menu {
     public void createVerkaufMenu(){
         //Auswahl des Preises
         System.out.println("Bitte wähle Preis aus: ");
+        // Eingabe des Strings
         String price_choice = getScanner().next();
+        //String in Integer umwandeln
         int price = Integer.valueOf(price_choice);
 
  

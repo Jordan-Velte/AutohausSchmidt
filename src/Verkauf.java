@@ -6,10 +6,11 @@ public class Verkauf {
     Verkaeufer _verkaeufer;
 
     //KONSTRUKTOR. Parameterübergabe im Constructor für Setter-Methode mit Variablen --> Definiert "Regeln" für Deklaration der Variablen --> Besonderheit: Parameter des Verkauf-Constructors haben Verweis zu Variablen unterschiedlicher Klassen. Wird dieser Verweis gelöscht, so ist das Objekt nicht mehr relevant
-    public Verkauf (Autos autos, Verkaeufer verkaeufer, Kunden kunden){
+    public Verkauf (Autos autos, Verkaeufer verkaeufer, Kunden kunden, int preis){
         this.setAuto(autos);
         this.setVerkaeufer(verkaeufer);
         this.setKunde(kunden);
+        this.setPreis(preis);
     }
     
     //GETTER (STRG + Leerzeichen = ...get eingeben)

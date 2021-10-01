@@ -41,7 +41,7 @@ public class Menu {
         String choice = getScanner().nextLine();
         System.out.println("Deine Auswahl ist: " + choice);
 
-        //IF-Bedingung nach TRUE und FALSE (siehe Foto)
+        //IF-Bedingung nach TRUE und FALSE (siehe Foto) 
         if(choice.equals("1")){
             createVerkaufMenu();
         }
@@ -140,13 +140,19 @@ public class Menu {
         }
     }
 
+    //Über Punktnotation Getter der Klasse aufrufen
     public void showVerkaeufe(){
+        int gesamtpreis = 0;
         for (Verkauf verkauf : App.getALLVerkauf()){
             if (verkauf != null){
-                System.out.println(verkauf.getAuto() + " " + verkauf.getKunde() + " " + verkauf.getVerkaeufer() + " " + verkauf.getPreis());
+                System.out.println("Auto: " + verkauf.getAuto().getMarke() + " " + verkauf.getAuto().getModell() + " Kunde: " + verkauf.getKunde().getVorname() + " " + verkauf.getKunde().getNachname() +" Verkäufer: " + verkauf.getVerkaeufer().getVorname() + " " + verkauf.getVerkaeufer().getNachname() + " Preis: " + verkauf.getPreis());
+                //siehe Null --> If-Abfrage
+                gesamtpreis = gesamtpreis + verkauf.getPreis();
             }
         }
+        System.out.println("Der Gesamtpreis beträgt: " + gesamtpreis);
     }
+
     
     //createAutos-Methode, Work in Progress --> deshalb Kommentar tbd
     public void createAutoMenu(){
@@ -260,8 +266,8 @@ public class Menu {
         System.out.println(App.getALLVerkaeufer()[vendor_index]);
 
 
-        //Hinzufügen in Array
-        App.addVerkauf(new Verkauf(App.getALLAutos()[car_index], App.getALLVerkaeufer()[vendor_index], App.getALLKunden()[client_index]));
+        //Hinzufügen in Array (Price neu)
+        App.addVerkauf(new Verkauf(App.getALLAutos()[car_index], App.getALLVerkaeufer()[vendor_index], App.getALLKunden()[client_index], price));
     }   
 
 
